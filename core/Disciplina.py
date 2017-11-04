@@ -14,8 +14,6 @@ class Disciplina():
     bibliografia_basica = None
     bibliografia_complementar = None
 
-    def __init__(self):
-        pass
 
 #NAO MOVER ESSE IMPORT CIRCULAR PARA CIMA
 from Matricula import Matricula

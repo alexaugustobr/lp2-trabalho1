@@ -7,8 +7,6 @@ class Matricula():
     data_matricula = None
     data_cancelamento = None
 
-    def __init__(self):
-        pass
 
     def altera_aluno(self, aluno):
         if type(aluno) is not Aluno:
