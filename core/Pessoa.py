@@ -22,11 +22,11 @@ class Pessoa():
         self.nome = nome
         return True
 
-    def retorna_celular(self, celular):
+    def retorna_celular(self):
         return self.celular
 
-    def retorna_email(self, email):
+    def retorna_email(self):
         return self.email
 
-    def retorna_nome(self, nome):
+    def retorna_nome(self):
         return self.nome
