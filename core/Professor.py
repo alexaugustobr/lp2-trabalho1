@@ -23,7 +23,7 @@ class Professor(Pessoa,Usuario):
 
     def carga_horaria_total(self):
         cht = 0
-        for disciplina in disciplinas:
-            if disciplina.carga_horaria is int:
+        for disciplina in self.disciplinas:
+            if type(disciplina.carga_horaria) is int:
                 cht += disciplina.carga_horaria
         return cht
