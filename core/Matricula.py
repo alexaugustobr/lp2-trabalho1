@@ -1,8 +1,3 @@
-
-
-from Aluno import Aluno
-from Disciplina import Disciplina
-
 class Matricula():
     aluno = None
     disciplina = None
@@ -35,3 +30,5 @@ class Matricula():
 
 
 #NAO MOVER ESSE IMPORT CIRCULAR PARA CIMA
+from .Aluno import Aluno
+from .Disciplina import Disciplina
