@@ -1,6 +1,6 @@
 from Pessoa import Pessoa
 from Usuario import Usuario
-import datatime
+import datetime
 
 class Aluno(Pessoa,Usuario):
     sigla_curso = None
