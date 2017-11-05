@@ -1,6 +1,6 @@
 from Pessoa import Pessoa
 from Usuario import Usuario
-
+from Matricula import Matricula
 
 class Disciplina():
     nome = None
@@ -15,5 +15,3 @@ class Disciplina():
     bibliografia_complementar = None
 
 
-#NAO MOVER ESSE IMPORT CIRCULAR PARA CIMA
-from Matricula import Matricula
