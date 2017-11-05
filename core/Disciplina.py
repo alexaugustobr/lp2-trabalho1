@@ -1,6 +1,5 @@
-from Pessoa import Pessoa
-from Usuario import Usuario
-from Matricula import Matricula
+from .Pessoa import Pessoa
+from .Usuario import Usuario
 
 class Disciplina():
     nome = None
@@ -15,3 +14,4 @@ class Disciplina():
     bibliografia_complementar = None
 
 
+from .Matricula import Matricula
