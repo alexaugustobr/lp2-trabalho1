@@ -1,6 +1,3 @@
-
-from datetime import datetime
-
 class Matricula():
     aluno = None
     disciplina = None
@@ -15,7 +12,23 @@ class Matricula():
         self.aluno = aluno
         return True
 
+    def altera_disciplina(self, disciplina):
+        if type(disciplina) is not Disciplina:
+            return False
+
+        self.disciplina = disciplina
+        return True
+
+    def retorna_aluno(self):    
+        Aluno = self.aluno
+        return Aluno
+
+    def retorna_disciplina(self):
+        Disciplina = self.disciplina
+        return Disciplina
+    
+
 
 #NAO MOVER ESSE IMPORT CIRCULAR PARA CIMA
-from Aluno import Aluno
-from Disciplina import Disciplina
+from .Aluno import Aluno
+from .Disciplina import Disciplina

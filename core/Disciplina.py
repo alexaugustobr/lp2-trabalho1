@@ -1,3 +1,4 @@
+
 from Pessoa import Pessoa
 from Usuario import Usuario
 
@@ -85,9 +86,5 @@ class Disciplina():
         return True
 
 
-
-
-
-
-#NAO MOVER ESSE IMPORT CIRCULAR PARA CIMA
 from Matricula import Matricula
+
