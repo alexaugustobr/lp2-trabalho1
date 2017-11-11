@@ -3,12 +3,12 @@ from .Usuario import Usuario
 import datetime
 
 class Aluno(Pessoa,Usuario):
-    sigla_curso = None
-    matriculas = []
+    __sigla_curso = None
+    __matriculas = []
 
     def disciplinas_aluno(self):
         nome_disciplinas = []
-        for matricula in self.matriculas:
+        for matricula in self.__matriculas:
             nome_disciplinas.append(matricula.disciplina.nome)
         return nome_disciplinas
 
@@ -18,37 +18,37 @@ class Aluno(Pessoa,Usuario):
         if matricula.disciplina.nome != None and matricula.disciplina.nome in self.disciplinas_aluno():
             return False
 
-        self.matriculas.append (matricula)
+        self.__matriculas.append (matricula)
         return True
 
-    def confirmar_matricular(self, matricula):
-        if type(matricula) is not Matricula:
+    def confirmar_matricular(self, disciplina):
+        if type(disciplina) is not Disciplina:
             return False
         
-        if matricula not in self.matriculas:
+        if disciplina not in self.__matriculas:
             return False
 
-        index_matricula = matriculas.index(matricula)
+        index_matricula = self.__matriculas.index(disciplina)
 
         matricula.data_confirmacao = datetime.datetime.now()
 
-        matriculas[index_matricula] = matricula
+        self.__matriculas[index_matricula] = matricula
 
         return True
         
     
     def cancelar_matricula(self, disciplina):
-        if type(matricula) is not Matricula:
+        if type(disciplina) is not Disciplina:
             return False
         
-        if matricula not in self.matriculas:
+        if disciplina not in self.__matriculas:
             return False
 
-        index_matricula = matriculas.index(matricula)
+        index_matricula = self.__matriculas.index(disciplina)
 
         matricula.data_cancelamento = datetime.datetime.now()
 
-        matriculas[index_matricula] = matricula
+       self.__matriculas[index_matricula] = matricula
 
         return True
 

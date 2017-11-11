@@ -1,32 +1,32 @@
 class Pessoa():
-    nome = None
-    email = None
-    celular = None
+    __nome = None
+    __email = None
+    __celular = None
 
 
     def altera_celular(self, celular):
         if type(celular) is not str:
             return False
-        self.celular = celular
+        self.__celular = celular
         return True
     
     def altera_email(self, email):
         if type(email) is not str:
             return False
-        self.email = email
+        self.__email = email
         return True
 
     def altera_nome(self, nome):
         if type(nome) is not str:
             return False
-        self.nome = nome
+        self.__nome = nome
         return True
 
     def retorna_celular(self):
-        return self.celular
+        return self.__celular
 
     def retorna_email(self):
-        return self.email
+        return self.__email
 
     def retorna_nome(self):
-        return self.nome
+        return self.__nome

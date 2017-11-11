@@ -1,30 +1,30 @@
 class Matricula():
-    aluno = None
-    disciplina = None
-    data_matricula = None
-    data_cancelamento = None
+    __aluno = None
+    __disciplina = None
+    __data_matricula = None
+    __data_cancelamento = None
 
 
     def altera_aluno(self, aluno):
         if type(aluno) is not Aluno:
             return False
 
-        self.aluno = aluno
+        self.__aluno = aluno
         return True
 
     def altera_disciplina(self, disciplina):
         if type(disciplina) is not Disciplina:
             return False
 
-        self.disciplina = disciplina
+        self.__disciplina = disciplina
         return True
 
     def retorna_aluno(self):    
-        Aluno = self.aluno
+        Aluno = self.__aluno
         return Aluno
 
     def retorna_disciplina(self):
-        Disciplina = self.disciplina
+        Disciplina = self.__disciplina
         return Disciplina
     
 
