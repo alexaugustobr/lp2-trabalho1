@@ -1,5 +1,5 @@
-from Pessoa import Pessoa
-from Usuario import Usuario
+from .Pessoa import Pessoa
+from .Usuario import Usuario
 import datetime
 
 class Aluno(Pessoa,Usuario):
@@ -54,5 +54,5 @@ class Aluno(Pessoa,Usuario):
 
 
 #NAO MOVER ESSE IMPORT CIRCULAR PARA CIMA
-from Disciplina import Disciplina
-from Matricula import Matricula
+from .Disciplina import Disciplina
+from .Matricula import Matricula
