@@ -29,33 +29,27 @@ class Aluno(Pessoa,Usuario):
     def confirmar_matricula(self, disciplina):
         if type(disciplina) is not Disciplina:
             return False
-        
-        if disciplina not in self.__matriculas:
-            return False
 
-        index_matricula = self.__matriculas.index(disciplina)
+        for i in range(0,len(self.__matriculas)):
+            if self.__matriculas[i].retorna_disciplina() == disciplina:
+                self.__matriculas[i].altera_data_confirmacao(datetime.date.today())
+                return True
 
-        matricula.data_confirmacao = datetime.datetime.now()
-
-        self.__matriculas[index_matricula] = matricula
-
-        return True
+        return False
         
     
     def cancelar_matricula(self, disciplina):
         if type(disciplina) is not Disciplina:
             return False
-        
-        if disciplina not in self.__matriculas:
-            return False
 
-        index_matricula = self.__matriculas.index(disciplina)
+        for i in range(0,len(self.__matriculas)):
+            if self.__matriculas[i].retorna_disciplina() == disciplina:
+                self.__matriculas[i].altera_data_cancelamento(datetime.date.today())
+                return True
 
-        matricula.data_cancelamento = datetime.datetime.now()
+        return False
 
-        self.__matriculas[index_matricula] = matricula
 
-        return True
     def __str__(self):
         return self.retorna_nome()
 

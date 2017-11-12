@@ -2,6 +2,7 @@ from core.Aluno import Aluno
 from core.Disciplina import Disciplina
 from core.Professor import Professor
 from core.Matricula import Matricula
+
 def main():
     #1 CRIAR 5 DISCIPLINAS
     matematica = Disciplina()
@@ -88,22 +89,21 @@ def main():
 
     #8 confimar a matricula de alunos em 5 disciplinas
     for i in range(0,4):
-        alunos[i].confirmar_matricula(matematica)
-        alunos[i].confirmar_matricula(portugues)
-        alunos[i].confirmar_matricula(historia)
-        alunos[i].confirmar_matricula(geografia)
-        alunos[i].confirmar_matricula(filosofia)
+        print(alunos[i].confirmar_matricula(matematica))
+        print(alunos[i].confirmar_matricula(portugues))
+        print(alunos[i].confirmar_matricula(historia))
+        print(alunos[i].confirmar_matricula(geografia))
+        print(alunos[i].confirmar_matricula(filosofia))
 
     #8 confimar a matricula de 1 aluno em 4 disciplina
-    reginaldo.confirmar_matricula(matematica)
-    reginaldo.confirmar_matricula(portugues)
-    reginaldo.confirmar_matricula(historia)
-    reginaldo.confirmar_matricula(geografia)
+    print(reginaldo.confirmar_matricula(matematica))
+    print(reginaldo.confirmar_matricula(portugues))
+    print(reginaldo.confirmar_matricula(historia))
+    print(reginaldo.confirmar_matricula(geografia))
 
     #8 confimar a matricula de 1 aluno em 1 disciplina
-    reginaldo.confirmar_matricula(filosofia)
-
-
+    print(reginaldo.confirmar_matricula(filosofia))
+    
 
 if __name__ == "__main__":
     main()

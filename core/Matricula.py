@@ -1,3 +1,6 @@
+
+import datetime
+
 class Matricula():
     
     def __init__(self):
@@ -5,7 +8,7 @@ class Matricula():
         self.__disciplina = None
         self.__data_matricula = None
         self.__data_cancelamento = None
-
+        self.__data_confirmacao = None
 
     def altera_aluno(self, aluno):
         if type(aluno) is not Aluno:
@@ -22,15 +25,28 @@ class Matricula():
         return True
 
     def retorna_aluno(self):    
-        Aluno = self.__aluno
-        return Aluno
+        return self.__aluno
 
     def retorna_disciplina(self):
-        Disciplina = self.__disciplina
-        return Disciplina
+        return self.__disciplina
     
+    def altera_data_cancelamento(self, data_cancelamento):
+        if type(data_cancelamento) != datetime.date:
+            return False
+        
+        self.__data_cancelamento = data_cancelamento
 
+    def altera_data_confirmacao(self, data_confirmacao):
+        if type(data_confirmacao) != datetime.date:
+            return False
+        
+        self.__data_confirmacao = data_confirmacao
 
-#NAO MOVER ESSE IMPORT CIRCULAR PARA CIMA
+    def retorna_data_confirmacao(self):
+        return self.__data_confirmacao
+
+    def retorna_data_cancelamento(self):
+        return self.__data_cancelamento
+
 from .Aluno import Aluno
 from .Disciplina import Disciplina
