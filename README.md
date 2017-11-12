@@ -10,6 +10,4 @@ Michael da Silva de Souza - RA 1700381
 
 Fabio Aurélio Abe Nogueira - RA 1700603  
 
-Reginaldo Rodrigues - RA 1700429
-
 Renato AlvesRenato Alves - RA 1202304
