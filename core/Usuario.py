@@ -1,6 +1,8 @@
 class Usuario:
-    __ra = None
-    __senha = None
+    
+    def __init__(self):
+        self.__ra = None
+        self.__senha = None
 
     def altera_senha(self, senha):
         if type(senha) is not str:

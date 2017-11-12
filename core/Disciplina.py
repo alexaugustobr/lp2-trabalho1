@@ -1,19 +1,17 @@
 
-from Pessoa import Pessoa
-from Usuario import Usuario
-
-
 class Disciplina():
-    __nome = None
-    __carga_horaria = None
-    __teoria = None
-    __pratica = None
-    __ementa = None
-    __compentecias = None
-    __habilidades = None
-    __conteudo = None
-    __bibliografia_basica = None
-    __bibliografia_complementar = None
+    
+    def __init__(self):
+        self.__nome = None
+        self.__carga_horaria = None
+        self.__teoria = None
+        self.__pratica = None
+        self.__ementa = None
+        self. __compentecias = None
+        self.__habilidades = None
+        self.__conteudo = None
+        self.__bibliografia_basica = None
+        self.__bibliografia_complementar = None
 
     def altera_nome(self, nome):
         if type(nome) is not str:
@@ -68,7 +66,7 @@ class Disciplina():
         if type(conteudo) is not str:
             return False
 
-        self.__conteudo conteudo
+        self.__conteudo = conteudo
         return True
 
     def altera_bibliografia_basica(self, bibliografia_basica):
@@ -86,46 +84,38 @@ class Disciplina():
         return True
 
     def retorna_nome( self ):
-        Nome = self.__nome
-        return Nome
+        return self.__nome
 
     def retorna_carga_horaria( self ):
-        if expression:
-            pass
-        Carga_Horaria = self.__carga_horaria
-        return int(Carga_Horaria)
+        return self.__carga_horaria
 
     def retorna_teoria( self ):
-        Teoria = self.teoria
-        return int(Teoria)
+        return self.__teoria
 
     def retorna_pratica( self ):
-        Pratica = self.__pratica
-        return int(Pratica)
+        return self.__pratica
 
     def retorna_ementa( self ):
-        Ementa = self.__ementa
-        return Ementa
+        return self.__ementa
 
     def retorna_competencias( self ):
-        Competencias = self.__compentecias
-        return Competencias
+        return self.__compentecias
 
     def retorna_habilidades( self ):
-        Habilidades = self.__habilidades
-        return Habilidades
+        return self.__habilidades
 
     def retorna_conteudo( self ):
-        Conteudo = self.__conteudo
-        return Conteudo
+        return self.__conteudo
 
     def retorna_bibliografia_basica( self ):
-        Bibliografia_Basica = self.__Bibliografia_Basica
-        return Bibliografia_Basica
+        return self.__Bibliografia_Basica
 
     def retorna_bibliografia_complementar( self ):
-        Bibliografia_Complementar = self.__bibliografia_complementar
-        return Bibliografia_Complementar
+        return self.__bibliografia_complementar
 
-from Matricula import Matricula
+    def __str__(self):
+        return self.retorna_nome()
+from .Matricula import Matricula
+from .Pessoa import Pessoa
+from .Usuario import Usuario
 

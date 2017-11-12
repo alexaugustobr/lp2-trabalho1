@@ -1,8 +1,10 @@
 class Matricula():
-    __aluno = None
-    __disciplina = None
-    __data_matricula = None
-    __data_cancelamento = None
+    
+    def __init__(self):
+        self.__aluno = None
+        self.__disciplina = None
+        self.__data_matricula = None
+        self.__data_cancelamento = None
 
 
     def altera_aluno(self, aluno):

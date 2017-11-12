@@ -3,19 +3,28 @@ from core.Disciplina import Disciplina
 from core.Professor import Professor
 from core.Matricula import Matricula
 def main():
-
+    #1 CRIAR 5 DISCIPLINAS
     matematica = Disciplina()
     portugues = Disciplina()
     historia = Disciplina()
     geografia = Disciplina()
     filosofia = Disciplina()
+    
+    matematica.altera_nome("matematica")
+    portugues.altera_nome("portugues")
+    historia.altera_nome("historia")
+    geografia.altera_nome("geografia")
+    filosofia.altera_nome("filosofia")
 
-    matematica.nome = "matematica"
-    portugues.nome = "portugues"
-    historia.nome = "historia"
-    geografia.nome = "geografia"
-    filosofia.nome = "filosofia"
+    matematica.altera_carga_horaria(1)
+    portugues.altera_carga_horaria(1)
+    historia.altera_carga_horaria(1)
+    geografia.altera_carga_horaria(1)
+    filosofia.altera_carga_horaria(1)
 
+    
+    
+    #2 CRIAR 5 ALUNOS
     alex = Aluno()
     cinthia = Aluno()
     michael = Aluno()
@@ -28,9 +37,11 @@ def main():
     fabio.altera_nome("fabio")
     reginaldo.altera_nome("reginaldo")        
 
+    #3 CRIAR 2 PROFESSORES
     julio = Professor()
     henrique = Professor()
 
+    #4 MATRICULAR 5 ALUNOS A 5 DISCIPLINAS
     matricula1 =  Matricula()
     matricula2 =  Matricula()
     matricula3 =  Matricula()
@@ -50,15 +61,49 @@ def main():
         for matricula in matriculas:
             aluno.matricular(matricula)
 
+    #5 ADICIONAR 2 DISCIPLINAS PARA UM PROF E 3 PRA OUTRO
     julio.adicionar_disicplina(matematica)
     julio.adicionar_disicplina(portugues)
+
+    
 
     henrique.adicionar_disicplina(historia)
     henrique.adicionar_disicplina(geografia)
     henrique.adicionar_disicplina(filosofia)
 
+    for d in julio.retorna_disiciplinas():
+        print (d)
+
+    for d in henrique.retorna_disiciplinas():
+        print (d)
+
+    #6 MOSTRAR DISICPLIONAS DE CADA ALUNO
     for aluno in alunos:
         print (aluno.retorna_nome(),aluno.disciplinas_aluno())
+
+    #7 MOSTRAR CARGA HORARIA DO PROFESSOR
+
+    print(julio.carga_horaria_total())
+    print(henrique.carga_horaria_total())
+
+    #8 confimar a matricula de alunos em 5 disciplinas
+    for i in range(0,4):
+        alunos[i].confirmar_matricula(matematica)
+        alunos[i].confirmar_matricula(portugues)
+        alunos[i].confirmar_matricula(historia)
+        alunos[i].confirmar_matricula(geografia)
+        alunos[i].confirmar_matricula(filosofia)
+
+    #8 confimar a matricula de 1 aluno em 4 disciplina
+    reginaldo.confirmar_matricula(matematica)
+    reginaldo.confirmar_matricula(portugues)
+    reginaldo.confirmar_matricula(historia)
+    reginaldo.confirmar_matricula(geografia)
+
+    #8 confimar a matricula de 1 aluno em 1 disciplina
+    reginaldo.confirmar_matricula(filosofia)
+
+
 
 if __name__ == "__main__":
     main()

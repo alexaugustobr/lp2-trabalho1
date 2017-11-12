@@ -3,25 +3,30 @@ from .Usuario import Usuario
 import datetime
 
 class Aluno(Pessoa,Usuario):
-    __sigla_curso = None
-    __matriculas = []
+    
+    
+    def __init__(self):
+        Pessoa.__init__(self)
+        Usuario.__init__(self)
+        self.__sigla_curso = None
+        self.__matriculas = []
 
     def disciplinas_aluno(self):
         nome_disciplinas = []
         for matricula in self.__matriculas:
-            nome_disciplinas.append(matricula.disciplina.nome)
+            nome_disciplinas.append(matricula.retorna_disciplina().retorna_nome())
         return nome_disciplinas
 
     def matricular(self, matricula):
         if type(matricula) is not Matricula:
             return False
-        if matricula.disciplina.nome != None and matricula.disciplina.nome in self.disciplinas_aluno():
+        if matricula.retorna_disciplina().retorna_nome() != None and matricula.retorna_disciplina().retorna_nome() in self.disciplinas_aluno():
             return False
 
         self.__matriculas.append (matricula)
         return True
 
-    def confirmar_matricular(self, disciplina):
+    def confirmar_matricula(self, disciplina):
         if type(disciplina) is not Disciplina:
             return False
         
@@ -48,10 +53,11 @@ class Aluno(Pessoa,Usuario):
 
         matricula.data_cancelamento = datetime.datetime.now()
 
-       self.__matriculas[index_matricula] = matricula
+        self.__matriculas[index_matricula] = matricula
 
         return True
-
+    def __str__(self):
+        return self.retorna_nome()
 
 #NAO MOVER ESSE IMPORT CIRCULAR PARA CIMA
 from .Disciplina import Disciplina

@@ -1,8 +1,9 @@
 class Pessoa():
-    __nome = None
-    __email = None
-    __celular = None
-
+    
+    def __init__(self):
+        self.__nome = None
+        self.__email = None
+        self.__celular = None
 
     def altera_celular(self, celular):
         if type(celular) is not str:
