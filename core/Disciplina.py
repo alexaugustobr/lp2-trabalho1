@@ -23,6 +23,8 @@ class Disciplina():
     def altera_carga_horaria(self, carga_horaria):
         if type(carga_horaria) is not int:
             return False
+        if carga_horaria <= 0:
+            return False
 
         self.__carga_horaria = carga_horaria
         return True
@@ -30,12 +32,16 @@ class Disciplina():
     def altera_teoria(self, teoria):
         if type(teoria) is not int:
             return False
+        if teoria <= 0:
+            return False
 
         self.__teoria = teoria
         return True
 
     def altera_pratica(self, pratica):
         if type(pratica) is not int:
+            return False
+        if pratica <= 0:
             return False
 
         self.__pratica = pratica
